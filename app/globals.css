@@ -7,3 +7,18 @@ html, body {
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
+
+/* Keep carousel items on one line */
+.whitespace-nowrap {
+  white-space: nowrap;
+}
+
+/* Marquee (infinite scrolling animation) */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 25s linear infinite;
+}

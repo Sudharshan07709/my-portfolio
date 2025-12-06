@@ -1,45 +1,31 @@
 import CertCarousel from "./CertCarousel";
 import { getCertImages } from "@/lib/getCertImages";
 
-export default function Certifications() {
-  const courseraMech = getCertImages("coursera-mech");
+export default function CertificationsSection() {
   const courseraAI = getCertImages("coursera-ai");
+  const courseraMech = getCertImages("coursera-mech");
   const udemy = getCertImages("udemy");
   const igetit = getCertImages("igetit");
   const languages = getCertImages("languages");
 
   return (
-    <section id="certifications" className="py-20">
-      <h2 className="text-3xl font-bold text-white text-center mb-12">
-        Certifications
-      </h2>
+    <section id="certifications" className="px-10 py-20">
+      <h2 className="text-3xl font-semibold mb-10">Certifications</h2>
 
-      <div className="max-w-6xl mx-auto space-y-16">
-        <CertCarousel 
-          title="Coursera – Mechanical Engineering" 
-          images={courseraMech} 
-        />
+      <h3 className="text-2xl mb-4">Coursera – AI / Data Science</h3>
+      <CertCarousel items={courseraAI} />
 
-        <CertCarousel 
-          title="Coursera – Data Science & AI" 
-          images={courseraAI} 
-        />
+      <h3 className="text-2xl mt-12 mb-4">Coursera – Mechanical Engineering</h3>
+      <CertCarousel items={courseraMech} />
 
-        <CertCarousel 
-          title="Udemy Certifications" 
-          images={udemy} 
-        />
+      <h3 className="text-2xl mt-12 mb-4">Udemy</h3>
+      <CertCarousel items={udemy} />
 
-        <CertCarousel 
-          title="IGETIT Certifications" 
-          images={igetit} 
-        />
+      <h3 className="text-2xl mt-12 mb-4">Igetit</h3>
+      <CertCarousel items={igetit} />
 
-        <CertCarousel 
-          title="Language Certifications" 
-          images={languages} 
-        />
-      </div>
+      <h3 className="text-2xl mt-12 mb-4">Languages</h3>
+      <CertCarousel items={languages} />
     </section>
   );
 }

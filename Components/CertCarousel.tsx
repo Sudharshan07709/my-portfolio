@@ -1,48 +1,68 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Image from "next/image";
+import { useState } from "react";
 
-interface Props {
+interface CertItem {
+  src: string;
   title: string;
-  images: string[];
 }
 
-export default function CertCarousel({ title, images }: Props) {
-  return (
-    <section className="py-12">
-      <h3 className="text-2xl font-semibold text-[#5BE7FF] mb-6 text-center">
-        {title}
-      </h3>
+export default function CertCarousel({ items = [] }: { items?: CertItem[] }) {
+  const [selected, setSelected] = useState<string | null>(null);
 
+  if (!Array.isArray(items)) return null;
+
+  return (
+    <div className="w-full overflow-hidden py-6">
+
+      {/* MOVING ROW */}
       <div className="relative w-full overflow-hidden">
-        <motion.div
-          className="flex gap-10"
-          animate={{ x: ["0%", "-100%"] }}
-          transition={{
-            repeat: Infinity,
-            duration: 20,
-            ease: "linear",
-          }}
+        <div
+          className="flex gap-10 animate-marquee whitespace-nowrap"
+          style={{ width: "max-content" }}
         >
-          {[...images, ...images].map((src, i) => (
+          {[...items, ...items].map((item, i) => (
             <div
               key={i}
-              className="min-w-[260px] h-[170px] bg-[#0F1629] border border-[#00D2FF]
-              rounded-xl overflow-hidden shadow-lg flex items-center justify-center 
-              hover:scale-105 transition cursor-pointer"
+              className="flex flex-col items-center cursor-pointer"
+              onClick={() => setSelected(item.src)}
             >
-              <Image
-                src={src}
-                alt="Certificate"
-                width={280}
-                height={180}
-                className="object-contain p-3"
-              />
+              <div className="w-[260px] h-[180px] bg-white rounded-xl shadow-md border border-gray-700 hover:scale-105 transition-all overflow-hidden">
+                <Image
+                  src={item.src}
+                  alt={item.title}
+                  width={500}
+                  height={400}
+                  className="w-full h-full object-contain"
+                />
+              </div>
+
+              <p className="text-sm text-center mt-2 text-gray-300">
+                {item.title}
+              </p>
             </div>
           ))}
-        </motion.div>
+        </div>
       </div>
-    </section>
+
+      {/* FULLSCREEN MODAL */}
+      {selected && (
+        <div
+          onClick={() => setSelected(null)}
+          className="fixed inset-0 bg-black/80 backdrop-blur-md flex items-center justify-center z-50"
+        >
+          <div className="max-w-5xl max-h-[90vh] p-4 rounded-xl bg-black">
+            <Image
+              src={selected}
+              alt="Certificate Fullscreen"
+              width={1600}
+              height={1200}
+              className="w-auto max-h-[85vh] object-contain mx-auto"
+            />
+          </div>
+        </div>
+      )}
+    </div>
   );
 }
