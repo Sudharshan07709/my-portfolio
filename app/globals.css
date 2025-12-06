@@ -7,7 +7,6 @@ html, body {
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
-
 /* Keep carousel items on one line */
 .whitespace-nowrap {
   white-space: nowrap;

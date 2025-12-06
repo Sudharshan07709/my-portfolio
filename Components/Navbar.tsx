@@ -6,18 +6,14 @@ export default function Navbar() {
       <h1 className="text-xl font-semibold">Sudharshan Ram</h1>
 
       <div className="flex gap-6">
-        <a href="#projects" className="hover:text-[#00D2FF] transition">
-          Projects
-        </a>
-        <a href="#certifications" className="hover:text-[#00D2FF] transition">
-          Certifications
-        </a>
-        <a href="#skills" className="hover:text-[#00D2FF] transition">
-          Skills
-        </a>
-        <a href="#contact" className="hover:text-[#00D2FF] transition">
-          Contact
-        </a>
+        <a href="#projects" className="hover:text-[#00D2FF] transition">Projects</a>
+        <a href="#certifications" className="hover:text-[#00D2FF] transition">Certifications</a>
+
+        {/* ⭐ NEW EXTRA CURRICULAR TAB */}
+        <a href="#extra" className="hover:text-[#00D2FF] transition">Extra Curricular</a>
+
+        <a href="#skills" className="hover:text-[#00D2FF] transition">Skills</a>
+        <a href="#contact" className="hover:text-[#00D2FF] transition">Contact</a>
       </div>
     </nav>
   );
