@@ -1,7 +1,9 @@
-import CertCarousel from "./CertCarousel";
-import { getCertImages } from "@/lib/getCertImages";
 
-export default function CertificationsSection() {
+
+import CertCarousel from "./CertCarousel";
+import { getCertImages } from "@/lib/getCertImages.server";
+
+export default function Certifications() {
   const courseraAI = getCertImages("coursera-ai");
   const courseraMech = getCertImages("coursera-mech");
   const udemy = getCertImages("udemy");

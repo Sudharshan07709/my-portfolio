@@ -2,11 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
-
-interface CertItem {
-  src: string;
-  title: string;
-}
+import type { CertItem } from "@/lib/types";   // <-- FIX: Import shared type
 
 export default function CertCarousel({ items = [] }: { items?: CertItem[] }) {
   const [selected, setSelected] = useState<string | null>(null);
@@ -15,7 +11,6 @@ export default function CertCarousel({ items = [] }: { items?: CertItem[] }) {
 
   return (
     <div className="w-full overflow-hidden py-6">
-
       {/* MOVING ROW */}
       <div className="relative w-full overflow-hidden">
         <div

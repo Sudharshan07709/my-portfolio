@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import ActivityModal from "./ActivityModal";
-import type { ActivityItem } from "@/lib/getActivityData.server";
+import type { ActivityItem } from "@/lib/types";
 
 export default function ExtraCurricularClient({
   activities,
@@ -22,20 +22,13 @@ export default function ExtraCurricularClient({
             className="bg-gray-900 p-4 rounded-xl cursor-pointer hover:scale-105 transition-all"
             onClick={() => setSelected(activity)}
           >
-            <img
-              src={activity.cover}
-              alt={activity.title}
-              className="w-full h-48 object-cover rounded-lg"
-            />
+            <img src={activity.cover} alt={activity.title} className="w-full h-48 object-cover rounded-lg" />
 
-            <h3 className="text-xl text-white mt-3 text-center">
-              {activity.title}
-            </h3>
+            <h3 className="text-xl text-white mt-3 text-center">{activity.title}</h3>
           </div>
         ))}
       </div>
 
-      {/* Modal */}
       {selected && (
         <ActivityModal
           isOpen={true}
