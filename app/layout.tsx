@@ -19,23 +19,16 @@ export const metadata: Metadata = {
     "Building solutions at the intersection of Data, Math, and Machine Intelligence.",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-bg-main`}
-      >
-        {/* Navbar on all pages */}
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-bg-main`}>
         <Navbar />
 
-        {/* Main content */}
-        <main className="pt-20">
+        <div className="max-w-7xl mx-auto px-6">
           {children}
-        </main>
+        </div>
+
       </body>
     </html>
   );

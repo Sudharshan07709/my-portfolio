@@ -1,7 +1,11 @@
 @import "tailwindcss";
 
 /* Global dark theme */
-html, body {
+html {
+  font-size: 17px; /* default is 16px */
+}
+
+body {
   background-color: #050814;
   color: #E4ECFF;
   scroll-behavior: smooth;
