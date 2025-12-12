@@ -1,5 +1,5 @@
 import Hero from "@/Components/Hero";
-import ProjectsSection from "@/Components/ProjectsSection";
+import ProjectsSection from "@/Components/Projects/ProjectsSection";
 import Certifications from "@/Components/Certifications.server";
 import ExtraCurricular from "@/Components/ExtraCurricular.server";
 import ContactForm from "@/Components/ContactForm";
