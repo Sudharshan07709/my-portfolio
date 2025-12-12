@@ -1,21 +1,22 @@
 "use client";
 
 import { useState } from "react";
-import { projects, Project } from "@/data/projects";
-import ProjectCard from "./ProjectCard";
-import ProjectModal from "./ProjectModal";
+import ProjectCard from "@/Components/ProjectCard";
+import ProjectModal from "@/Components/ProjectModal";
+import { projects } from "@/data/projects";
 
 export default function ProjectsSection() {
-  const [activeProject, setActiveProject] = useState<Project | null>(null);
+  const [activeProject, setActiveProject] = useState<any>(null);
 
   return (
-    <section className="py-20">
-      <h2 className="text-3xl font-semibold text-center mb-12">
-        Selected Projects
+    <section id="projects" className="py-24">
+      {/* TITLE */}
+      <h2 className="text-4xl font-semibold mb-14">
+        Projects
       </h2>
 
-      <div className="grid gap-6 
-                      grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+      {/* PROJECT GRID */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {projects.map((project) => (
           <ProjectCard
             key={project.id}
@@ -25,6 +26,7 @@ export default function ProjectsSection() {
         ))}
       </div>
 
+      {/* MODAL */}
       {activeProject && (
         <ProjectModal
           project={activeProject}
