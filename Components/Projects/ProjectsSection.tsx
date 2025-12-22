@@ -17,33 +17,37 @@ export default function ProjectsSection() {
   );
 
   return (
-    <section id="projects" className="py-24">
-      <h2 className="text-4xl font-semibold mb-16">Projects</h2>
+    <section id="projects" className="py-24 px-6">
+      <div className="max-w-6xl mx-auto">
+        <h2 className="text-4xl font-semibold mb-16">
+          Projects
+        </h2>
 
-      <ProjectCategory
-        title="AI & Data Science"
-        projects={aiData}
-        onProjectClick={setActiveProject}
-      />
-
-      <ProjectCategory
-        title="Scientific Computing & Software Development"
-        projects={scientific}
-        onProjectClick={setActiveProject}
-      />
-
-      <ProjectCategory
-        title="Mechanical Engineering"
-        projects={mechanical}
-        onProjectClick={setActiveProject}
-      />
-
-      {activeProject && (
-        <ProjectModal
-          project={activeProject}
-          onClose={() => setActiveProject(null)}
+        <ProjectCategory
+          title="AI & Data Science"
+          projects={aiData}
+          onProjectClick={setActiveProject}
         />
-      )}
+
+        <ProjectCategory
+          title="Scientific Computing & Software Development"
+          projects={scientific}
+          onProjectClick={setActiveProject}
+        />
+
+        <ProjectCategory
+          title="Mechanical Engineering"
+          projects={mechanical}
+          onProjectClick={setActiveProject}
+        />
+
+        {activeProject && (
+          <ProjectModal
+            project={activeProject}
+            onClose={() => setActiveProject(null)}
+          />
+        )}
+      </div>
     </section>
   );
 }

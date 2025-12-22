@@ -14,8 +14,11 @@ export default function Home() {
       <Skills />
       <ExtraCurricular />
       <section id="contact" className="scroll-mt-24 py-20 px-6">
-        <ContactForm />
-      </section>
+  <div className="max-w-6xl mx-auto">
+    <ContactForm />
+  </div>
+</section>
+
     </>
   );
 }
