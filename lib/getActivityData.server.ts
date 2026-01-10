@@ -10,7 +10,7 @@ export interface ActivityItem {
 }
 
 export function getActivityData(): ActivityItem[] {
-  noStore(); // ✅ disable Next.js caching
+  noStore(); 
 
   const basePath = path.join(process.cwd(), "public", "activities");
   const folders = fs.readdirSync(basePath);

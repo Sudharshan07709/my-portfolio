@@ -43,6 +43,10 @@ The work emphasized data-driven storytelling and perception-aware visualization 
       "Visual Perception",
     ],
     category: "AI_DATA",
+    images: [
+    "/projects/us-sales-visual-analytics/img-1.png",
+    "/projects/us-sales-visual-analytics/img-2.png",
+  ],
   },
 
   {
@@ -68,6 +72,7 @@ The project further explored data-driven dynamical system reconstruction using f
       "Git",
     ],
     category: "AI_DATA",
+    images:[],
   },
 
   {
@@ -90,6 +95,7 @@ Special emphasis was placed on surrogate modeling, meta-learning concepts, and e
       "Scikit-learn",
     ],
     category: "AI_DATA",
+    images:[],
   },
 
   /* =====================================================
@@ -118,6 +124,9 @@ Results were visualized using ParaView, including velocity, pressure, and temper
       "Git",
     ],
     category: "SCIENTIFIC_COMPUTING",
+    images:[  "/projects/parallel-cfd-solver/img-1.png",
+    "/projects/parallel-cfd-solver/img-2.png",
+    "/projects/parallel-cfd-solver/img-3.png",],
   },
 
   /* =====================================================
@@ -145,5 +154,55 @@ Significant contributions were made to the Pad Wear Indicator (PWI) project, lea
       "Teamcenter",
     ],
     category: "MECHANICAL",
+    images:[],
+  },
+    {
+    id: "Liquid_sheet_breakup",
+    title: "Characterization of liquid sheet breakup in practical atomizers",
+    shortDescription:
+      "Experimental characterization and optimization of liquid sheet breakup for practical atomizers.",
+    longDescription: `
+This project experimentally studies breakup phenomena in liquid sheet atomizers. Key parameters such as breakup length and breakup frequency were optimized for inkjet applications with the aid of acoustic energy.
+`.trim(),
+    tech: ["Experimental Research", "Atomizer Design", "Data Analysis", "Acoustics"],
+    category: "MECHANICAL",
+    images:[],
+  },
+  {
+    id: "Pulsatile_flow_velocity_profile",
+    title:
+      "Effect of velocity profile on pulsatile flow in macro blood vessels of a cardiovascular system",
+    shortDescription:
+      "Theoretical modeling of pulsatile blood flow in macro-scale vessels using governing equations.",
+    longDescription: `
+This project theoretically models blood flow in macro channels of a cardiovascular system by imposing Navier–Stokes and continuity equations. Based on the flow-field understanding, insights can be used to support the design of biomedical machines.
+`.trim(),
+    tech: ["Fluid Mechanics", "Mathematical Modeling", "Navier–Stokes", "Biomedical Engineering"],
+    category: "MECHANICAL",
+    images:[],
+  },
+  {
+    id: "Rotating_sphere_flow_study",
+    title: "Flow study over a spherical rotating body with different angular velocity",
+    shortDescription:
+      "CFD analysis of wake behavior and backflow around a rotating sphere across angular velocities.",
+    longDescription: `
+A computational simulation study of airflow past a rotating sphere. The variation in wake region length was analyzed for different angular velocities, and the backflow phenomenon was examined from the resulting flow field.
+`.trim(),
+    tech: ["CFD", "ANSYS/Fluent", "Aerodynamics", "Post-processing"],
+    category: "MECHANICAL",
+    images:[],
+  },
+   {
+    id: "PV_panel_thermal_FEA",
+    title: "Finite element analysis on thermal distribution in a PV solar panel",
+    shortDescription:
+      "Thermal FEA to study heat distribution in PV panels and propose design changes to improve efficiency.",
+    longDescription: `
+This case study investigates heat distribution patterns in a PV solar panel using finite element analysis. Based on thermal contours, design changes related to the frame and cell-array distribution were proposed to improve panel efficiency.
+`.trim(),
+    tech: ["FEA", "Thermal Analysis", "Design Optimization", "Engineering Simulation"],
+    category: "MECHANICAL",
+    images:[],
   },
 ];
