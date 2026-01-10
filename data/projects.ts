@@ -22,7 +22,26 @@ export const projects: Project[] = [
   /* =====================================================
      AI & DATA SCIENCE
      ===================================================== */
-
+  {
+  id: "finance-ai-agent",
+  title: "Finance AI Assistant Agent",
+  shortDescription: "Python-based finance assistant using Google ADK LlmAgent and search tools to plan savings and investments.",
+  longDescription: "Personal project building a finance assistant using Google ADK LlmAgent. It provides two agents: a root finance_assistance_agent that gathers user financial details and an investment_plan_agent that uses google_search to fetch the latest market and company data. The assistant analyzes monthly spending, suggests ways to reduce expenses and increase savings, and supplies factual, search-backed numbers for current market queries. Implemented in Python, structured for extension, and configured to use Gemini-models via the Google ADK tools.",
+  tech: [
+    "Python",
+    "Google ADK",
+    "LLM",
+    "Gemini",
+    "AgentTool",
+    "Google Search",
+    "Investment Planning",
+    "Git"
+  ],
+  category: "AI_DATA",
+  github: "https://github.com/Sudharshan07709/Finance_AI_agent",
+  images: [
+  ]
+},
   {
     id: "us-sales-visual-analytics",
     title: "Visual Data Analysis of US Sales Trends",
@@ -72,7 +91,8 @@ The project further explored data-driven dynamical system reconstruction using f
       "Git",
     ],
     category: "AI_DATA",
-    images:[],
+    images:[ "/projects/crowd-ml-modeling/img-1.png",
+    "/projects/crowd-ml-modeling/img-2.png",],
   },
 
   {
@@ -127,7 +147,31 @@ Results were visualized using ParaView, including velocity, pressure, and temper
     images:[  "/projects/parallel-cfd-solver/img-1.png",
     "/projects/parallel-cfd-solver/img-2.png",
     "/projects/parallel-cfd-solver/img-3.png",],
+    github: "https://github.com/Sudharshan07709/Fluidchen_CFD_Solver",
   },
+  {
+  id: "heat-equation-fdm-solver",
+  title: "2D Heat Equation Modeling and Numerical Solvers",
+  shortDescription:
+    "Finite-difference-based simulation of stationary and instationary heat equations with performance-optimized solvers.",
+  longDescription: `
+Academic project in Scientific Computing focused on modeling stationary and time-dependent heat equations on a 2D unit square using finite difference methods in MATLAB.
+
+Implemented explicit and implicit time integration schemes, including Explicit/Implicit Euler, Runge–Kutta (RK4), and Gauss–Seidel solvers. Emphasized numerical stability, convergence analysis, and performance optimization through sparse matrix construction, vectorization, and loop reduction. Generated surface and contour visualizations to analyze temperature evolution, demonstrating practical applications in heat transfer and thermal analysis.
+`,
+  tech: [
+    "MATLAB",
+    "Finite Difference Methods",
+    "Heat Equation",
+    "Explicit & Implicit Euler",
+    "Runge–Kutta (RK4)",
+    "Gauss-Seidel",
+    "Sparse Matrices",
+    "Numerical Stability",
+  ],
+  category: "SCIENTIFIC_COMPUTING",
+  
+},
 
   /* =====================================================
      MECHANICAL ENGINEERING
@@ -175,11 +219,12 @@ This project experimentally studies breakup phenomena in liquid sheet atomizers.
     shortDescription:
       "Theoretical modeling of pulsatile blood flow in macro-scale vessels using governing equations.",
     longDescription: `
-This project theoretically models blood flow in macro channels of a cardiovascular system by imposing Navier–Stokes and continuity equations. Based on the flow-field understanding, insights can be used to support the design of biomedical machines.
+    This project presents a theoretical analysis of pulsatile blood flow in macro blood vessels, focusing on the influence of velocity profiles and Womersley number. Blood flow is modeled as axisymmetric, incompressible, Newtonian flow in a rigid cylindrical vessel, appropriate for large arteries such as the aorta. Starting from the Navier–Stokes equations, an analytical solution is derived using Bessel functions under a periodic pressure gradient. Results show that low Womersley numbers yield parabolic profiles, while higher values produce blunted velocity distributions and phase lag, with localized flow reversal observed in the human aorta. The study provides analytical insight relevant to cardiovascular hemodynamics and biomedical engineering.
 `.trim(),
     tech: ["Fluid Mechanics", "Mathematical Modeling", "Navier–Stokes", "Biomedical Engineering"],
     category: "MECHANICAL",
-    images:[],
+    images:[ "/projects/Pulsatile_flow_velocity_profile/img-1.png",
+    "/projects/Pulsatile_flow_velocity_profile/img-2.png",],
   },
   {
     id: "Rotating_sphere_flow_study",

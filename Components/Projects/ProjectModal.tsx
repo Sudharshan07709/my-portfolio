@@ -20,7 +20,7 @@ export default function ProjectModal({ project, onClose }: Props) {
                    max-h-[90vh] overflow-y-auto relative"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* CLOSE */}
+        {/* CLOSE BUTTON */}
         <button
           onClick={onClose}
           className="absolute top-4 right-4 text-xl font-semibold hover:text-red-600"
@@ -29,9 +29,38 @@ export default function ProjectModal({ project, onClose }: Props) {
         </button>
 
         {/* TITLE */}
-        <h2 className="text-2xl font-semibold mb-4">
+        <h2 className="text-2xl font-semibold mb-2">
           {project.title}
         </h2>
+
+        {/* ACTION LINKS (GitHub / Demo) */}
+        {(project.github || project.demo) && (
+          <div className="flex flex-wrap gap-4 mb-6">
+            {project.github && (
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2 rounded-md bg-gray-900 text-white
+                           hover:bg-gray-800 transition"
+              >
+                View on GitHub
+              </a>
+            )}
+
+            {project.demo && (
+              <a
+                href={project.demo}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2 rounded-md bg-blue-600 text-white
+                           hover:bg-blue-700 transition"
+              >
+                Live Demo
+              </a>
+            )}
+          </div>
+        )}
 
         {/* IMAGES */}
         {hasImages && (
@@ -51,6 +80,18 @@ export default function ProjectModal({ project, onClose }: Props) {
         <p className="text-neutral-700 whitespace-pre-line">
           {project.longDescription}
         </p>
+
+        {/* TECH STACK */}
+        <div className="mt-6 flex flex-wrap gap-2">
+          {project.tech.map((t) => (
+            <span
+              key={t}
+              className="text-xs px-2 py-1 rounded-md bg-neutral-200"
+            >
+              {t}
+            </span>
+          ))}
+        </div>
       </div>
     </div>
   );
