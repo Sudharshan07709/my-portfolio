@@ -1,29 +1,41 @@
 import fs from "fs";
 import path from "path";
+import { unstable_noStore as noStore } from "next/cache";
 
 export interface ActivityItem {
   title: string;
-  description: string;
   cover: string;
   images: string[];
+  description: string;
 }
 
 export function getActivityData(): ActivityItem[] {
-  const basePath = path.join(process.cwd(), "public", "activities");
+  noStore(); // ✅ disable Next.js caching
 
+  const basePath = path.join(process.cwd(), "public", "activities");
   const folders = fs.readdirSync(basePath);
 
   return folders.map((folder) => {
     const folderPath = path.join(basePath, folder);
     const files = fs.readdirSync(folderPath);
 
-    const images = files.filter((f) => /\.(png|jpg|jpeg|webp)$/i.test(f));
+    const images = files.filter((f) =>
+      /\.(png|jpg|jpeg|webp)$/i.test(f)
+    );
+
+    const requirementsPath = path.join(folderPath, "requirements.txt");
+
+    let description = "No description available.";
+
+    if (fs.existsSync(requirementsPath)) {
+      description = fs.readFileSync(requirementsPath, "utf-8").trim();
+    }
 
     return {
       title: folder.replace(/-/g, " "),
-      description: "Description about " + folder,
       cover: `/activities/${folder}/${images[0]}`,
-      images: images.map((f) => `/activities/${folder}/${f}`),
+      images: images.map((img) => `/activities/${folder}/${img}`),
+      description,
     };
   });
 }

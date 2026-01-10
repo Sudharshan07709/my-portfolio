@@ -1,0 +1,3 @@
+I participated in the Quant & Code Hackathon organized by the Informatics Department at TUM as part of the Computational Science and Engineering program. The event gave me hands-on exposure to problem-solving in areas such as quantitative analysis, coding under time constraints, and working with unfamiliar problem statements.
+
+Although my team did not win, the hackathon was a valuable learning experience. I gained insights into how others approach complex problems, improved my teamwork and time-management skills, and connected with students from different technical backgrounds. Overall, the event helped me better understand my strengths, identify areas for improvement, and build confidence for future technical challenges.

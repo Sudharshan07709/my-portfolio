@@ -20,6 +20,8 @@ export const skills: SkillCategory[] = [
       "Machine Learning",
       "Deep Learning",
       "Data Visualization",
+      "Microsoft Fabric",
+      "SQL"
     ],
   },
   {

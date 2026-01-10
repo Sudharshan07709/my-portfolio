@@ -1,9 +1,11 @@
-
+// NO "use client"
+// NO "use server"
 
 import CertCarousel from "./CertCarousel";
 import { getCertImages } from "@/lib/getCertImages.server";
 
 export default function Certifications() {
+  const databricks = getCertImages("databricks");
   const courseraAI = getCertImages("coursera-ai");
   const courseraMech = getCertImages("coursera-mech");
   const udemy = getCertImages("udemy");
@@ -13,8 +15,10 @@ export default function Certifications() {
   return (
     <section id="certifications" className="px-10 py-20">
       <h2 className="text-3xl font-semibold mb-10">Certifications</h2>
-
-      <h3 className="text-2xl mb-4">Coursera – AI / Data Science</h3>
+      
+      <h3 className="text-2xl mb-4">Databricks</h3>
+      <CertCarousel items={databricks} />
+       <h3 className="text-2xl mb-4">Coursera – AI / Data Science</h3>
       <CertCarousel items={courseraAI} />
 
       <h3 className="text-2xl mt-12 mb-4">Coursera – Mechanical Engineering</h3>

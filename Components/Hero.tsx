@@ -65,9 +65,9 @@ export default function Hero() {
         transition={{ delay: 0.5 }}
         className="text-gray-300 max-w-3xl mb-10 text-lg md:text-xl leading-relaxed"
       >
-        I'm a computational science and engineering student focused in ML and data driven research.
+        I'm a computational science and engineering student focused in ML, data and AI driven research.
         In this platform, I will showcase a strong foundation in Data-driven analysis, Visualization
-        techniques, Machine learning, and numerical modeling — explore my work
+        techniques, Machine learning, and AI solution — explore my work
         and contributions.
       </motion.p>
 
