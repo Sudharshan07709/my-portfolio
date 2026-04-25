@@ -2,58 +2,58 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import type { CertItem } from "@/lib/types";   // <-- FIX: Import shared type
+import type { CertItem } from "@/lib/types";
 
 export default function CertCarousel({ items = [] }: { items?: CertItem[] }) {
   const [selected, setSelected] = useState<string | null>(null);
 
-  if (!Array.isArray(items)) return null;
+  if (!Array.isArray(items) || items.length === 0) return null;
 
   return (
-    <div className="w-full overflow-hidden py-6">
-      {/* MOVING ROW */}
-      <div className="relative w-full overflow-hidden">
+    <div className="w-full overflow-hidden py-3">
+      <div className="relative overflow-hidden">
         <div
-          className="flex gap-10 animate-marquee whitespace-nowrap"
+          className="animate-marquee flex gap-6 whitespace-nowrap"
           style={{ width: "max-content" }}
         >
-          {[...items, ...items].map((item, i) => (
-            <div
-              key={i}
-              className="flex flex-col items-center cursor-pointer"
+          {[...items, ...items].map((item, index) => (
+            <button
+              key={`${item.src}-${index}`}
+              type="button"
+              className="w-[250px] shrink-0 cursor-pointer text-left"
               onClick={() => setSelected(item.src)}
             >
-              <div className="w-[260px] h-[180px] bg-white rounded-xl shadow-md border border-gray-700 hover:scale-105 transition-all overflow-hidden">
-                <Image
-                  src={item.src}
-                  alt={item.title}
-                  width={500}
-                  height={400}
-                  className="w-full h-full object-contain"
-                />
+              <div className="overflow-hidden rounded-[1.4rem] border border-white/10 bg-[rgba(255,255,255,0.03)] p-3 transition duration-300 hover:-translate-y-1 hover:border-white/20">
+                <div className="overflow-hidden rounded-[1rem] bg-white">
+                  <Image
+                    src={item.src}
+                    alt={item.title}
+                    width={500}
+                    height={350}
+                    className="h-[170px] w-full object-contain"
+                  />
+                </div>
+                <p className="mt-3 whitespace-normal text-sm leading-6 text-white/75">
+                  {item.title}
+                </p>
               </div>
-
-              <p className="text-sm text-center mt-2 text-gray-300">
-                {item.title}
-              </p>
-            </div>
+            </button>
           ))}
         </div>
       </div>
 
-      {/* FULLSCREEN MODAL */}
       {selected && (
         <div
           onClick={() => setSelected(null)}
-          className="fixed inset-0 bg-black/80 backdrop-blur-md flex items-center justify-center z-50"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-[#05060d]/85 p-4 backdrop-blur-md"
         >
-          <div className="max-w-5xl max-h-[90vh] p-4 rounded-xl bg-black">
+          <div className="section-shell max-h-[90vh] max-w-5xl rounded-[2rem] p-4">
             <Image
               src={selected}
-              alt="Certificate Fullscreen"
+              alt="Certificate fullscreen"
               width={1600}
               height={1200}
-              className="w-auto max-h-[85vh] object-contain mx-auto"
+              className="max-h-[85vh] w-auto rounded-[1.5rem] object-contain"
             />
           </div>
         </div>

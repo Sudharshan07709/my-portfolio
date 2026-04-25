@@ -1,17 +1,6 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import Navbar from "@/Components/Navbar";
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "Sudharshan Ram Jayaraman | Portfolio",
@@ -22,13 +11,17 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-bg-main`}>
+      <body className="antialiased">
+        <div className="ambient-bg" aria-hidden="true">
+          <div className="gradient-orb orb-1" />
+          <div className="gradient-orb orb-2" />
+          <div className="gradient-orb orb-3" />
+        </div>
         <Navbar />
 
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           {children}
         </div>
-
       </body>
     </html>
   );

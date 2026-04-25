@@ -2,78 +2,44 @@ import { skills } from "@/lib/skills";
 
 export default function Skills() {
   return (
-    <section id="skills" className="w-full py-24 px-6">
-      <div className="max-w-6xl mx-auto">
-        {/* Section Header */}
-        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-          Skills & Technologies
-        </h2>
+    <section id="skills" className="scroll-mt-28 py-8">
+      <div className="section-shell rounded-[2rem] px-6 py-10 sm:px-8 lg:px-12">
+        <div className="mb-12 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+          <div>
+            <div className="mb-4 flex items-center gap-4 text-sm uppercase tracking-[0.28em] text-white/55">
+              <span className="h-px w-12 bg-[var(--accent-gradient)]" />
+              Toolkit
+            </div>
+            <h2 className="font-display text-4xl text-white sm:text-5xl">
+              Skills and technologies
+            </h2>
+          </div>
 
-        <p className="text-gray-400 max-w-2xl mb-14">
-          A snapshot of the tools, technologies, and theoretical foundations I
-          use to build high-performance computational and data-driven systems.
-        </p>
+          <p className="max-w-2xl text-base leading-8 text-[var(--text-secondary)]">
+            The tools and foundations I use to build high-performance,
+            data-driven, and human-readable technical work.
+          </p>
+        </div>
 
-        {/* Skills Grid */}
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {skills.map((category, idx) => (
+        <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+          {skills.map((category) => (
             <div
-              key={idx}
-              className="
-                relative
-                rounded-2xl
-                p-6
-                bg-white/5
-                backdrop-blur-xl
-                border border-white/10
-                shadow-lg
-                transition-all
-                duration-300
-                hover:-translate-y-2
-                hover:shadow-2xl
-                hover:border-[#00D2FF]/40
-              "
+              key={category.title}
+              className="rounded-[1.6rem] border border-white/10 bg-[rgba(255,255,255,0.04)] p-6 transition duration-300 hover:-translate-y-1 hover:border-white/20"
             >
-              {/* Holographic glow overlay */}
-              <div
-                className="
-                  absolute inset-0
-                  rounded-2xl
-                  bg-gradient-to-br
-                  from-[#00D2FF]/10
-                  to-transparent
-                  opacity-0
-                  hover:opacity-100
-                  transition
-                  pointer-events-none
-                "
-              />
-
-              {/* Card Content */}
-              <h3 className="relative text-xl font-semibold text-white mb-1 tracking-wide">
-                {category.title}
-              </h3>
-
-              <p className="relative text-sm text-gray-400 mb-4">
+              <p className="text-xs uppercase tracking-[0.22em] text-white/45">
                 {category.subtitle}
               </p>
 
-              <div className="relative flex flex-wrap gap-2">
-                {category.skills.map((skill, i) => (
+              <h3 className="mt-3 font-display text-3xl text-white">
+                {category.title}
+              </h3>
+
+              <div className="mt-6 flex flex-wrap gap-2">
+                {category.skills.map((skill) => (
                   <span
-                    key={i}
-                    className="
-                      text-sm
-                      px-3
-                      py-1
-                      rounded-full
-                      bg-white/10
-                      text-gray-200
-                      border border-white/10
-                      transition
-                      hover:bg-[#00D2FF]/10
-                      hover:border-[#00D2FF]/40
-                    "
+                    key={skill}
+                    className="rounded-full border border-white/10 bg-black/10 px-3 py-1.5 text-sm text-white/75"
                   >
                     {skill}
                   </span>

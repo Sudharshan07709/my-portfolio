@@ -13,15 +13,18 @@ export default function ProjectCategory({
   onProjectClick,
 }: Props) {
   return (
-    <div className="mb-20">
-      <h3 className="text-2xl font-semibold mb-8">{title}</h3>
+    <div className="mb-16 last:mb-0">
+      <div className="mb-8 flex items-center justify-between gap-4">
+        <h3 className="font-display text-3xl text-white">{title}</h3>
+        <div className="hidden h-px flex-1 bg-white/10 sm:block" />
+      </div>
 
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
         {projects.map((project) => (
           <ProjectCard
             key={project.id}
             project={project}
-            onClick={() => onProjectClick(project)} // ✅ FULL OBJECT
+            onClick={() => onProjectClick(project)}
           />
         ))}
       </div>
