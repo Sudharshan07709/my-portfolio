@@ -17,9 +17,10 @@ export const skills: SkillCategory[] = [
       "Python",
       "NumPy",
       "Pandas",
-      "Machine Learning",
-      "Deep Learning",
-      "Data Visualization",
+      "Scikit",
+      "seaborn",
+      "docker",
+      "Tableau",
       "Microsoft Fabric",
       "SQL"
     ],
@@ -29,7 +30,7 @@ export const skills: SkillCategory[] = [
     subtitle: "Robust and scalable systems",
     skills: [
       "Modern C++",
-      "Python",
+      "Kubernetes",
       "Git & GitHub",
       "Testing",
       "Clean Architecture",
