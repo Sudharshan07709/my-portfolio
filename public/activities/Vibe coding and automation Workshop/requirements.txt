@@ -1,0 +1,7 @@
+I recently attended a one-day hands-on Vibe Coding workshop organized by the Hilti YTCI Edge Computing team. The session brought together field and technical experts who demonstrated real production-level projects built using Vibe Coding and automation technologies.
+
+One of the most interesting demonstrations was the development of an MCP server that automated workflows in Jira and Confluence, including documentation management and publication processes. It showed how automation can reduce repetitive work and improve team efficiency in real-world engineering environments.
+
+Another impressive project was a custom web automation tool designed to track and locate tags in real time. The tool included interactive and intuitive data visualization methods, making it easier to monitor and analyze live data effectively.
+
+The workshop was highly practical and collaborative. By the end of the session, we also worked in teams to build small automation solutions based on everyday challenges and workflow problems we face in projects. It was a great experience that strengthened my understanding of vide Coding and automation. Most importantly the session gave me a balanced understanding of both the advantages and trade-offs of using Vibe Coding for automation and production workflows.

@@ -22,6 +22,34 @@ export const projects: Project[] = [
   /* =====================================================
      AI & DATA SCIENCE
      ===================================================== */
+   {
+  id: "Fin-data-pipeline",
+  title: "Real-time bank data pipeline",
+  shortDescription: "End-to-end modern data stack project that streams banking transactions using Kafka and Debezium, orchestrates workflows with Airflow, transforms data in Snowflake using dbt, and delivers business insights through Power BI dashboards.",
+  longDescription:  "Designed and implemented a real-time banking analytics platform using a modern data stack architecture. Synthetic customer, account, and transaction data is generated in PostgreSQL and captured through Change Data Capture (CDC) using Debezium and Apache Kafka. Streaming data is stored in S3-compatible object storage and orchestrated with Apache Airflow into Snowflake. dbt is used to build staging, dimensional, and fact models while maintaining historical records through SCD Type-2 snapshots. The warehouse follows a Bronze–Silver–Gold architecture to transform raw events into business-ready datasets. Power BI dashboards provide insights into customer activity, account performance, transaction trends, and banking KPIs. The project is fully containerized with Docker and includes CI/CD pipelines using GitHub Actions for automated testing and deployment.",
+  tech: [
+     "Python",
+    "PostgreSQL",
+    "Apache Kafka",
+    "Debezium",
+    "Apache Airflow",
+    "Snowflake",
+    "dbt",
+    "Power BI",
+    "MinIO",
+    "Docker",
+    "GitHub Actions",
+    "CI/CD",
+    "Data Warehousing",
+    "CDC",
+    "SCD Type-2",
+    "SQL"
+  ],
+  category: "AI_DATA",
+  github: "https://github.com/Sudharshan07709/fin-data-pipeline",
+  images: ["/projects/fin-data-pipeline/pipeline architecture.png",
+    "/projects/fin-data-pipeline/dashboard.png"]
+},
   {
   id: "finance-ai-agent",
   title: "Finance AI Assistant Agent",
