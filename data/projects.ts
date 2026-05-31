@@ -47,8 +47,8 @@ export const projects: Project[] = [
   ],
   category: "AI_DATA",
   github: "https://github.com/Sudharshan07709/fin-data-pipeline",
-  images: ["/projects/fin-data-pipeline/pipeline architecture.png",
-    "/projects/fin-data-pipeline/dashboard.png"]
+  images: ["/projects/Fin-data-pipeline/img-1.png",
+    "/projects/Fin-data-pipeline/img-2.png"]
 },
   {
   id: "finance-ai-agent",
